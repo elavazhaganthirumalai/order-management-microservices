@@ -1,0 +1,9 @@
+services:
+  customer-service:
+    build: ./customer-service
+
+  order-service:
+    build: ./order-service
+
+  notification-service:
+    build: ./notification-service
