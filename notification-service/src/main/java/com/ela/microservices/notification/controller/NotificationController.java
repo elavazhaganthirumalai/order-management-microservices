@@ -20,6 +20,6 @@ public class NotificationController {
             @RequestBody NotificationRequest request) {
 
         service.sendNotification(request.message());
-        return "Notification Sent";
+        return "Notification Sent!";
     }
 }
