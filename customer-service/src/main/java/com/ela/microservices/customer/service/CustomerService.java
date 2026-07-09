@@ -5,7 +5,6 @@ import com.ela.microservices.customer.dto.CustomerResponse;
 import com.ela.microservices.customer.entity.Customer;
 import com.ela.microservices.customer.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.apache.bcel.ExceptionConstants;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
