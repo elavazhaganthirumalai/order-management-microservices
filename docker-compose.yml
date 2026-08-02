@@ -1,9 +1,30 @@
 services:
-  customer-service:
-    build: ./customer-service
 
-  order-service:
-    build: ./order-service
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
 
-  notification-service:
-    build: ./notification-service
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq-container
+
+    restart: unless-stopped
+
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  mysql_data:

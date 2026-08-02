@@ -2,13 +2,10 @@ spring:
   application:
     name: customer-service
 
-  h2:
-    console:
-      enabled: true
-
   datasource:
-    url: jdbc:h2:mem:customerdb
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://localhost:3306/customer_db
+    username: root
+    password: root
 
   jpa:
     hibernate:

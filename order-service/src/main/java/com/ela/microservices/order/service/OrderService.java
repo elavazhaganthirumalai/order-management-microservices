@@ -1,7 +1,6 @@
 package com.ela.microservices.order.service;
 
 import com.ela.microservices.order.dto.CustomerResponse;
-import com.ela.microservices.order.dto.NotificationRequest;
 import com.ela.microservices.order.dto.OrderResponse;
 import com.ela.microservices.order.entity.Order;
 import com.ela.microservices.order.exception.CustomerNotFoundException;
@@ -20,26 +19,21 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository repository;
-    private final RestClient restClient;
+    private final RestClient.Builder restClient;
     private final OrderEventProducer producer;
 
     public OrderResponse save(Order order) {
 
         try {
-            restClient.get()
-                    .uri("http://localhost:8081/customers/{id}",
+            restClient.build()
+                    .get()
+                    .uri("http://CUSTOMER-SERVICE/customers/{id}",
                             order.getCustomerId())
                     .retrieve()
                     .body(CustomerResponse.class);
 
             Order save = repository.save(order);
 
-//            restClient.post()
-//                    .uri("http://localhost:8083/notifications")
-//                    .body(new NotificationRequest(
-//                            "Order Created Successfully"))
-//                    .retrieve()
-//                    .toBodilessEntity();
             producer.publish(
                     new OrderCreatedEvent(
                             save.getId(),
