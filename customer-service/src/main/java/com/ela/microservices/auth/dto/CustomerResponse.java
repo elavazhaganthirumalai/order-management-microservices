@@ -1,4 +1,4 @@
-package com.ela.microservices.customer.dto;
+package com.ela.microservices.auth.dto;
 
 public record CustomerResponse(
         Long id,

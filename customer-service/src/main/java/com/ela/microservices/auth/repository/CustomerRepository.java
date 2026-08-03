@@ -1,6 +1,6 @@
-package com.ela.microservices.customer.repository;
+package com.ela.microservices.auth.repository;
 
-import com.ela.microservices.customer.entity.Customer;
+import com.ela.microservices.auth.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

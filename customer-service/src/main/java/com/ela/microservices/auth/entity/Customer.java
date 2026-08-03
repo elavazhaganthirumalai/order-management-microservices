@@ -1,4 +1,4 @@
-package com.ela.microservices.customer.entity;
+package com.ela.microservices.auth.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

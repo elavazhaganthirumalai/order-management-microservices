@@ -1,9 +1,9 @@
-package com.ela.microservices.customer.service;
+package com.ela.microservices.auth.service;
 
-import com.ela.microservices.customer.Exception.CustomerNotFoundException;
-import com.ela.microservices.customer.dto.CustomerResponse;
-import com.ela.microservices.customer.entity.Customer;
-import com.ela.microservices.customer.repository.CustomerRepository;
+import com.ela.microservices.auth.Exception.CustomerNotFoundException;
+import com.ela.microservices.auth.dto.CustomerResponse;
+import com.ela.microservices.auth.entity.Customer;
+import com.ela.microservices.auth.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

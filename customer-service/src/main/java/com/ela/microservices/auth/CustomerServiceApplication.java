@@ -1,4 +1,4 @@
-package com.ela.microservices.customer;
+package com.ela.microservices.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

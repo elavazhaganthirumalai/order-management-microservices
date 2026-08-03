@@ -1,0 +1,26 @@
+spring:
+  jwt:
+    secret: 6d14b4f41b50e3d0d8f17b07dfffd2c87fbc3dcdb53ab9e6d9bc98b70e50f1f8
+    expiration: 900000
+  application:
+    name: auth-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8086
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

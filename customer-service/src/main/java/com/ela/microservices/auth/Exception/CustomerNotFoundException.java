@@ -1,4 +1,4 @@
-package com.ela.microservices.customer.Exception;
+package com.ela.microservices.auth.Exception;
 
 public class CustomerNotFoundException extends RuntimeException {
     public CustomerNotFoundException(String message) {

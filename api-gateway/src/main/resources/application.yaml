@@ -2,6 +2,9 @@ server:
   port: 8080
 
 spring:
+  jwt:
+    secret: 6d14b4f41b50e3d0d8f17b07dfffd2c87fbc3dcdb53ab9e6d9bc98b70e50f1f8
+
   application:
     name: api-gateway
 
@@ -10,6 +13,11 @@ spring:
       server:
         webflux:
           routes:
+            - id: auth-service
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/auth/**
+
             - id: customer-service
               uri: lb://CUSTOMER-SERVICE
               predicates:

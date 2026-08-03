@@ -1,8 +1,8 @@
-package com.ela.microservices.customer.controller;
+package com.ela.microservices.auth.controller;
 
-import com.ela.microservices.customer.dto.CustomerResponse;
-import com.ela.microservices.customer.entity.Customer;
-import com.ela.microservices.customer.service.CustomerService;
+import com.ela.microservices.auth.dto.CustomerResponse;
+import com.ela.microservices.auth.entity.Customer;
+import com.ela.microservices.auth.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
